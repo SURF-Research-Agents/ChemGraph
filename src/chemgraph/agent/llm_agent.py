@@ -9,7 +9,9 @@ from chemgraph.models.local_model import load_ollama_model
 from chemgraph.models.anthropic import load_anthropic_model
 from chemgraph.models.gemini import load_gemini_model
 from chemgraph.models.groq import load_groq_model
+from chemgraph.models.willma import load_willma_model
 from chemgraph.models.supported_models import (
+    supported_surfai_models,
     supported_openai_models,
     supported_ollama_models,
     supported_anthropic_models,
@@ -38,7 +40,7 @@ from chemgraph.graphs.mock_agent import construct_mock_agent_graph
 from chemgraph.graphs.single_agent_mcp import construct_single_agent_mcp_graph
 from chemgraph.graphs.multi_agent_mcp import construct_multi_agent_mcp_graph
 from chemgraph.graphs.graspa_mcp import construct_graspa_mcp_graph
-
+from langchain_surf import ChatWillma
 import logging
 
 logger = logging.getLogger(__name__)
@@ -114,7 +116,7 @@ class ChemGraph:
 
     def __init__(
         self,
-        model_name: str = "gpt-4o-mini",
+        model_name: str = "Llama 3.3 70b Instruct AWQ",
         workflow_type: str = "single_agent",
         base_url: str = None,
         api_key: str = None,
@@ -158,7 +160,11 @@ class ChemGraph:
             frequency_penalty = 0.0  # No repetition penalty
             presence_penalty = 0.0  # No presence penalty
 
-            if (
+            if model_name in supported_surfai_models:
+                llm = load_willma_model(
+                    model_name=model_name, api_key=api_key, temperature=temperature
+                )
+            elif (
                 model_name in supported_openai_models
                 or model_name in supported_argo_models
             ):

@@ -2,6 +2,38 @@
 Lists of supported models for different LLM providers.
 """
 
+# SURFAI supported models 
+supported_surfai_models = [
+    "Zephyr 7B", 
+    "Mixtral Instruct AWQ", 
+    "Llama 3.1 8B Instruct", 
+    "Phi-3.5 mini", 
+    "Qwen2.5 7B", 
+    "Qwen2.5-Coder-1.5B-Instruct", 
+    "Qwen2.5-Coder-7B-Instruct", 
+    "stabilityai/stable-code-instruct-3b", 
+    "gemma-2 9b", 
+    "DeepSeek Distilled Llama 70B", 
+    "Llama 3.3 70b Instruct AWQ", 
+    "LLaVa 1.5 7B", 
+    "Qwen 2.5 Coder 32B Instruct AWQ", 
+    "default-text-large", 
+    "Qwen 2.5 VL 32B Instruct AWQ", 
+    "SmolVLM 2 Instruct 2.2B", 
+    "DeepSeek 2 VL 4.5B", 
+    "default-text-medium", 
+    "Gemma-3 27B GPTQ", 
+    "zai-org/GLM-4.5-Air-FP8", 
+    "meta-llama/Llama-Guard-3-8B", 
+    "default-code-instruct-small", 
+    "mistralai/Mistral-Small-3.2-24B-Instruct-2506", 
+    "openai/gpt-oss-safeguard-120b", 
+    "openai/gpt-oss-120b", 
+    "Gemma-3-1B RAG", 
+    "Llama 3.3 70b Instruct AWQ [RAG Mode]", 
+    "DeepSeek Distilled Llama 70B AWQ [RAG Mode]"
+]
+
 # OpenAI models that are supported
 supported_openai_models = [
     "gpt-5-mini",

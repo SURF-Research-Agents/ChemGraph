@@ -11,7 +11,7 @@ authors = [
     { name = "Murat Keçeli", email = "keceli@anl.gov" },
     { name = "Aditya Tanikanti", email = "atanikanti@anl.gov" }
 ]
-requires-python = ">=3.10"
+requires-python = ">=3.13.5"
 dependencies = [
     "langgraph",
     "langchain",
@@ -45,7 +45,7 @@ dependencies = [
     "mcp",
     "fastmcp",
     "pytest-asyncio",
-    "grandalf==0.8"
+    "grandalf==0.8",
     ]
 
 [project.optional-dependencies]
